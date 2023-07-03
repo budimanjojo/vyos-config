@@ -1,10 +1,6 @@
 #!/bin/vbash
 # shellcheck shell=bash
 
-if [ "$(id -g -n)" != 'vyattacfg' ] ; then
-  exec sg vyattacfg -c "/bin/vbash $(readlink -f "$0") $*"
-fi
-
 if ! command -v sops >/dev/null 2>&1 && ! command -v git >/dev/null 2>&1; then
   echo "You need 'sops' and 'git' installed to continue."
   echo "Either build your own VyOS image or use one from 'https://github.com/onedr0p/vyos-build'"
@@ -31,7 +27,6 @@ ssh-keygen -b 2048 -t rsa -f /config/secrets/id_rsa -q -N ""
 chown vyos:users /config/secrets/id_rsa*
 
 echo "Enabling SSH access to this machine on port 22..."
-configure
 # shellcheck disable=SC2121
 set service ssh
 commit
@@ -43,7 +38,7 @@ read -r repoBranch
 repoBranch="${repoBranch:-main}"
 
 ipAddresses=$(ip -o -4 addr show | awk '{print $2": "$4}' | cut -d '/' -f1 | grep -v "lo")
-sshPublicKey=$(cat /secrets/id_rsa.pub)
+sshPublicKey=$(cat /config/secrets/id_rsa.pub)
 printf "This machine IP addresses are:\n%s\n" "$ipAddresses"
 echo "Please send 'age.key' to this machine using 'scp' from your workstation"
 echo "connected to this machine using the interface IP it is connected to:"
@@ -64,7 +59,7 @@ find . -maxdepth 1 \
   ! -path './auth' \
   ! -path './user-data' \
   ! -path './secrets' \
-  ! -exec sudo rm rf {} +
+  ! -exec sudo rm -rf {} +
 
 if [ -d .git ]; then
   rm -rf .git
