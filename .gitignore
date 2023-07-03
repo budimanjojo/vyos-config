@@ -1,0 +1,76 @@
+# Ignore everything
+/*
+
+# Track certain files
+!.gitignore
+!/.sops.yaml
+!/apply-config.sh
+!/bootstrap.sh
+!/secrets.sops.env
+!/LICENSE
+!/README.md
+
+# VyOS bootstrap config
+!/bootstrap/
+/bootstrap/*
+!/bootstrap/*.sh
+
+# VyOS config
+!/config-parts/
+/config-parts/*
+!/config-parts/*.sh
+
+# VyOS scripts
+!/scripts/
+/scripts/*
+!/scripts/*.sh
+!/scripts/*.script
+!/scripts/commit/
+/scripts/commit/*
+!/scripts/commit/pre-hooks.d/
+/scripts/commit/pre-hooks.d/*
+!/scripts/commit/pre-hooks.d/**.sh
+
+# Containers configs
+!/containers/
+/containers/*
+!/containers/adguardhome/
+/containers/adguardhome/*
+!/containers/adguardhome/config/
+/containers/adguardhome/config/*
+!/containers/adguardhome/config/AdGuardHome.yaml.bootstrap.tmpl
+!/containers/adguardhome/work/
+/containers/adguardhome/work/*
+!/containers/adguardhome/work/.gitkeep
+
+!/containers/bind/
+/containers/bind/*
+!/containers/bind/config/
+/containers/bind/config/*
+!/containers/bind/config/named.conf
+!/containers/bind/config/zones/
+/containers/bind/config/zones/*
+!/containers/bind/config/zones/db.*
+
+!/containers/dnsdist/
+/containers/dnsdist/*
+!/containers/dnsdist/config/
+/containers/dnsdist/config/*
+!/containers/dnsdist/config/dnsdist.conf
+
+!/containers/omada-controller/
+/containers/omada-controller/*
+!/containers/omada-controller/data/
+/containers/omada-controller/data/*
+!/containers/omada-controller/data/.gitkeep
+!/containers/omada-controller/logs/
+/containers/omada-controller/logs/*
+!/containers/omada-controller/logs/.gitkeep
+
+# CI
+!/.github/
+/.github/*
+!/.github/renovate.json
+!/.github/workflows/
+/.github/workflows/*
+!/.github/workflows/renovate.yaml

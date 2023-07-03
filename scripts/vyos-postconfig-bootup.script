@@ -1,0 +1,29 @@
+#!/bin/bash
+# This script is executed at boot time after VyOS configuration is fully
+# applied. Any modification required to work around unfixed bugs or use
+# services not available through the VyOS CLI system can be placed here.
+
+if [ -d "/home/vyos" ]; then
+# Add dotfiles for home directory
+tee /home/vyos/.gitconfig <<END >/dev/null
+[init]
+  defaultBranch = "main"
+[core]
+  sshCommand = "ssh -i /config/secrets/id_rsa"
+[safe]
+  directory = "/config"
+[gpg]
+  format = "ssh"
+[user]
+  email = "budimanjojo@gmail.com"
+  name = "budimanjojo"
+  signingKey = "/config/secrets/id_rsa.pub"
+END
+chown vyos:users /home/vyos/.gitconfig
+
+tee -a /home/vyos/.bash_aliases <<END >/dev/null
+export SOPS_AGE_KEY_FILE=/config/secrets/age.key
+alias podman="sudo podman"
+END
+chown vyos:users /home/vyos/.bash_aliases
+fi

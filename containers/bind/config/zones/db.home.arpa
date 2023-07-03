@@ -1,0 +1,37 @@
+; Make sure to update the epoch time in the SOA records so coreDNS picks up the changes automatically
+; https://www.epochconverter.com/
+
+; SOA Records
+$TTL 3600
+$ORIGIN home.arpa.
+@ 3600 IN SOA home.arpa. gateway.home.arpa. (
+  1687425003         ; serial number (epoch timestamp)
+  7200               ; refresh period
+  3600               ; retry period
+  1209600            ; expire time
+  3600               ; minimum ttl
+)
+
+; NS Records
+@                           IN  NS  gateway.home.arpa.
+
+; LAN
+gateway                     IN  A   192.168.10.1
+firehd-8-livingroom         IN  A   192.168.10.10
+eunice-tablet               IN  A   192.168.10.56
+
+; SERVER
+kmaster1                    IN  A   192.168.200.21
+kmaster2                    IN  A   192.168.200.22
+kmaster3                    IN  A   192.168.200.23
+budimanjojo-vm              IN  A   192.168.200.30
+budimanjojo-nas             IN  A   192.168.200.31
+budimanjojo-main            IN  A   192.168.200.49
+
+; IOT
+broadlink-livingroom-plug   IN  A   192.168.69.10
+broadlink-bedroom-rm4c      IN  A   192.168.69.11
+
+; WIREGUARD
+android-phone-wg            IN  A   10.10.0.2
+work-pc-wg                  IN  A   10.10.0.3

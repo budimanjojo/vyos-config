@@ -1,0 +1,38 @@
+{
+  "enabled": true,
+  "platform": "github",
+  "username": "budimanjojo-bot[bot]",
+  "repositories": ["budimanjojo/home-cluster"],
+  "gitAuthor": "budimanjojo-bot <111944664+budimanjojo-bot[bot]@users.noreply.github.com>",
+  "semanticCommits": "enabled",
+  "labels": ["renovatebot"],
+  "commitBody": "Signed-Off-by: Budiman JOJO <budimanjojo@gmail.com>",
+  "semanticCommitScope": "images",
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "Dependency Dashboard",
+  "suppressNotifications": ["prIgnoreNotification"],
+  "rebaseWhen": "conflicted",
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "config-parts/.+\\.sh$"
+      ],
+      "matchStrings": [
+        "set container name .* image '?(?<depName>.*?):(?<currentValue>[^'\n]*=?)'?"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["dep/major"]
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "ignoreTests": true,
+      "automergeType": "branch",
+      "automerge": true
+    }
+  ]
+}
