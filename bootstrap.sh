@@ -46,6 +46,8 @@ echo "'scp /path/to/age.key vyos@<ip-address>:/config/secrets/age.key'"
 echo ""
 printf "Your SSH public key:\n%s\n\n" "$sshPublicKey"
 echo "Please also add the public key to the 'Deploy key' in your GitHub repository."
+echo "You can use scp to send this key to your workstation too:"
+echo "'scp vyos@<ip-address>:/config/secrets/id_rsa.pub .'"
 echo "Press ENTER when you're done."
 read -r
 
