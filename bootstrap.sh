@@ -95,19 +95,8 @@ while IFS= read -r -d '' file
 do
   cfgfile="${file%.bootstrap.tmpl}"
 
-  shafile=$file.sha256
-  if ! test -e "$shafile"; then
-    echo "rebuild" >"$shafile"
-  fi
-
-  newsha=$(envsubst <"$file" | shasum -a 256 | awk '{print $1}')
-  oldsha=$(cat "$shafile")
-
-  if ! test "$newsha" == "$oldsha"; then
-    echo "Configuration changed for $file"
-    envsubst <"$file" >"$cfgfile"
-    echo "$newsha" >"$shafile"
-  fi
+  echo "$cfgfile generated from $file"
+  envsubst <"$file" >"$cfgfile"
 done < <(find containers -type f -name "*bootstrap.tmpl" -print0)
 
 # Reset the configuration
