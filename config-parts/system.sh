@@ -17,6 +17,6 @@ set system name-server '1.1.1.1'
 set system name-server '8.8.8.8'
 
 set system task-scheduler task backup-config crontab-spec '0 0 * * *'
-set system task-scheduler task backup-config executable-path '/config/scripts/custom-config-backup.sh'
+set system task-scheduler task backup-config executable path '/config/scripts/custom-config-backup.sh'
 
 set system time-zone 'Asia/Jakarta'

@@ -105,7 +105,7 @@ do
     envsubst <"$file" >"$cfgfile"
     echo "$newsha" >"$shafile"
   fi
-done < <(find containers -type f -name "*bootstrap.tmpl" -print 0)
+done < <(find containers -type f -name "*bootstrap.tmpl" -print0)
 
 # Reset the configuration
 load /opt/vyatta/etc/config.boot.default

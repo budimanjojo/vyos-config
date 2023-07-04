@@ -56,7 +56,7 @@ do
       restart_containers="$restart_containers $(echo "$file" | awk -F / '{print $1}')"
     fi
   fi
-done < <(find containers -type f -name "*.tmpl" -print 0)
+done < <(find containers -type f -name "*.tmpl" -print0)
 
 # Include VyOS specific functions and aliases
 # shellcheck source=/dev/null
