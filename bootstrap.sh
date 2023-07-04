@@ -61,6 +61,7 @@ find . -maxdepth 1 \
   ! -path './auth' \
   ! -path './user-data' \
   ! -path './secrets' \
+  ! -wholename './config.boot' \
   ! -exec sudo rm -rf {} +
 
 if [ -d .git ]; then
