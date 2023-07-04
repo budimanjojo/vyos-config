@@ -65,9 +65,9 @@ if [ -d .git ]; then
   rm -rf .git
 fi
 
-git config --global --add init.defaultBranch "$repoBranch"
-git config --global --add safe.directory "/config"
-git config --global --add core.sshCommand "ssh -i /config/secrets/id_rsa"
+git config --global init.defaultBranch "$repoBranch"
+git config --global safe.directory "/config"
+git config --global core.sshCommand "ssh -i /config/secrets/id_rsa"
 git init -q
 git remote add origin git@github.com:"$repoName".git
 git pull origin "$repoBranch" -q
