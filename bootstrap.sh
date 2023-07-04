@@ -39,12 +39,12 @@ repoBranch="${repoBranch:-main}"
 
 ipAddresses=$(ip -o -4 addr show | awk '{print $2": "$4}' | cut -d '/' -f1 | grep -v "lo")
 sshPublicKey=$(cat /config/secrets/id_rsa.pub)
-printf "This machine IP addresses are:\n%s\n" "$ipAddresses"
+printf "This machine IP addresses are:\n%s\n\n" "$ipAddresses"
 echo "Please send 'age.key' to this machine using 'scp' from your workstation"
 echo "connected to this machine using the interface IP it is connected to:"
 echo "'scp /path/to/age.key vyos@<ip-address>:/config/secrets/age.key'"
 echo ""
-printf "Your SSH public key:\n%s\n" "$sshPublicKey"
+printf "Your SSH public key:\n%s\n\n" "$sshPublicKey"
 echo "Please also add the public key to the 'Deploy key' in your GitHub repository."
 echo "Press ENTER when you're done."
 read -r
