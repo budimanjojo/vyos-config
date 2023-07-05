@@ -18,7 +18,7 @@ set service dhcp-server shared-network-name LAN1 authoritative
 set service dhcp-server shared-network-name LAN1 ping-check
 set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 default-router '192.168.10.1'
 set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 lease '86400'
-set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 name-server '10.5.0.1'
+set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 name-server '10.5.0.2'
 set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 range 0 start '192.168.10.50'
 set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 range 0 stop '192.168.10.199'
 # LAN1 static mappings
@@ -32,7 +32,7 @@ set service dhcp-server shared-network-name SERVER authoritative
 set service dhcp-server shared-network-name SERVER ping-check
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 default-router '192.168.200.1'
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 lease '86400'
-set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 name-server '10.5.0.1'
+set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 name-server '10.5.0.2'
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 range 0 start '192.168.200.50'
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 range 0 stop '192.168.200.199'
 # SERVER VLAN static mappings
@@ -48,7 +48,7 @@ set service dhcp-server shared-network-name IOT authoritative
 set service dhcp-server shared-network-name IOT ping-check
 set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 default-router '192.168.69.1'
 set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 lease '86400'
-set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 name-server '10.5.0.1'
+set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 name-server '10.5.0.2'
 set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 range 0 start '192.168.69.50'
 set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 range 0 stop '192.168.69.199'
 # IOT VLAN static mappings
@@ -62,6 +62,6 @@ set service dhcp-server shared-network-name GUEST authoritative
 set service dhcp-server shared-network-name GUEST ping-check
 set service dhcp-server shared-network-name GUEST subnet 192.168.250.0/24 default-router '192.168.250.1'
 set service dhcp-server shared-network-name GUEST subnet 192.168.250.0/24 lease '86400'
-set service dhcp-server shared-network-name GUEST subnet 192.168.250.0/24 name-server '10.5.0.1'
+set service dhcp-server shared-network-name GUEST subnet 192.168.250.0/24 name-server '10.5.0.2'
 set service dhcp-server shared-network-name GUEST subnet 192.168.250.0/24 range 0 start '192.168.250.50'
 set service dhcp-server shared-network-name GUEST subnet 192.168.250.0/24 range 0 stop '192.168.250.199'
