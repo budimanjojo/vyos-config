@@ -454,6 +454,7 @@ set firewall name GUEST-CONTAINERS rule 10 destination group address-group 'dns_
 set firewall name GUEST-CONTAINERS rule 10 destination port '53,843'
 set firewall name GUEST-CONTAINERS rule 20 description 'allow access to guest portal'
 set firewall name GUEST-CONTAINERS rule 20 action 'accept'
+set firewall name GUEST-CONTAINERS rule 20 protocol 'tcp'
 set firewall name GUEST-CONTAINERS rule 20 destination group address-group 'omada_controller'
 set firewall name GUEST-CONTAINERS rule 20 destination port '8088'
 set firewall name GUEST-CONTAINERS rule 999 description 'drop invalid'
