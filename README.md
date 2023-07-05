@@ -44,7 +44,7 @@ After bootstrapping, you don't need to run it anymore although it should be pret
 
 ## :gear:&nbsp; Chore
 
-Everytime you want to change something, do it inside `/config` directory and then run [apply-config.sh](./apply-config.sh).
+Everytime you want to change something, do it inside `/config` directory and then run [apply-config.sh](./apply-config.sh) with `-c` flag.
 Don't forget to push the changes to your remote repository too.
 This will ensure the state of this repository to be the same as the machine configuration.
 
