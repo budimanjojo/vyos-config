@@ -2,7 +2,7 @@
 # shellcheck disable=all
 
 set protocols bgp system-as '65400'
-set protocols bgp parameters router-id '192.168.10.1'
+set protocols bgp parameters router-id '192.168.200.1'
 
 set protocols bgp neighbor 192.168.200.21 description 'kmaster1'
 set protocols bgp neighbor 192.168.200.21 remote-as '65401'
