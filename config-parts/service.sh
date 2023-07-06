@@ -39,7 +39,7 @@ set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 range
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 range 0 stop '192.168.200.199'
 # SERVER VLAN static mappings
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-vm ip-address '192.168.200.30'
-set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-vm mac-address '2a:15:3a:68:ea:81'
+set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-vm mac-address 'd0:50:99:25:88:91'
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-nas ip-address '192.168.200.31'
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-nas mac-address 'ae:de:bc:cc:7b:2d'
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-main ip-address '192.168.200.49'
