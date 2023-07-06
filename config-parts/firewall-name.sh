@@ -145,10 +145,6 @@ set firewall name WAN-LOCAL rule 20 description 'allow access to wireguard serve
 set firewall name WAN-LOCAL rule 20 action 'accept'
 set firewall name WAN-LOCAL rule 20 protocol 'udp'
 set firewall name WAN-LOCAL rule 20 destination port '51821'
-set firewall name WAN-LOCAL rule 30 description 'allow access k8s ingress'
-set firewall name WAN-LOCAL rule 30 action 'accept'
-set firewall name WAN-LOCAL rule 30 protocol 'tcp'
-set firewall name WAN-LOCAL rule 30 destination group address-group 'k8s_ingress'
 set firewall name WAN-LOCAL rule 30 destination port '80,443'
 
 # From LOCAL to LAN1
@@ -339,6 +335,10 @@ set firewall name WIREGUARD-SERVER rule 999 log 'enable'
 set firewall name WAN-SERVER description 'From WAN to SERVER'
 set firewall name WAN-SERVER default-action 'drop'
 set firewall name WAN-SERVER enable-default-log
+set firewall name WAN-SERVER rule 10 description 'allow access k8s ingress'
+set firewall name WAN-SERVER rule 10 action 'accept'
+set firewall name WAN-SERVER rule 10 protocol 'tcp'
+set firewall name WAN-SERVER rule 10 destination group address-group 'k8s_ingress'
 set firewall name WAN-SERVER rule 999 description 'drop invalid'
 set firewall name WAN-SERVER rule 999 action 'drop'
 set firewall name WAN-SERVER rule 999 state invalid 'enable'
