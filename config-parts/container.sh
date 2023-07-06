@@ -83,7 +83,7 @@ set container name omada-controller volume data destination '/opt/tplink/EAPCont
 set container name omada-controller volume data mode 'rw'
 set container name omada-controller volume logs source '/config/containers/omada-controller/logs'
 set container name omada-controller volume logs destination '/opt/tplink/EAPController/logs'
-set container name omada-controller volume logs mode 'ro'
+set container name omada-controller volume logs mode 'rw'
 set container name omada-controller environment TZ value 'Asia/Jakarta'
 
 # cloudflare-ddns
