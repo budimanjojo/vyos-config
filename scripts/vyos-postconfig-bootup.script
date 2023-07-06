@@ -12,6 +12,8 @@ tee /home/vyos/.gitconfig <<END >/dev/null
   sshCommand = "ssh -i /config/secrets/id_rsa"
 [safe]
   directory = "/config"
+[commit]
+  gpgSign = true
 [gpg]
   format = "ssh"
 [user]
