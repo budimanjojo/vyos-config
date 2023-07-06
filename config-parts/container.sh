@@ -34,7 +34,7 @@ set container name bind volume cache mode 'rw'
 
 # adguardhome
 set container name adguardhome cap-add 'net-bind-service'
-set container name adguardhome image 'docker.io/adguard/adguardhome:v0.107.32'
+set container name adguardhome image 'docker.io/adguard/adguardhome:v0.107.33'
 set container name adguardhome memory '0'
 set container name adguardhome network CONTAINERS address '10.5.0.4'
 set container name adguardhome restart 'on-failure'
