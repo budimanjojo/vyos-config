@@ -145,7 +145,6 @@ set firewall name WAN-LOCAL rule 20 description 'allow access to wireguard serve
 set firewall name WAN-LOCAL rule 20 action 'accept'
 set firewall name WAN-LOCAL rule 20 protocol 'udp'
 set firewall name WAN-LOCAL rule 20 destination port '51821'
-set firewall name WAN-LOCAL rule 30 destination port '80,443'
 
 # From LOCAL to LAN1
 set firewall name LOCAL-LAN1 description 'From LOCAL to LAN1'
