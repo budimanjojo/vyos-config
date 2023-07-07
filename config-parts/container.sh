@@ -4,18 +4,19 @@
 set container network CONTAINERS description 'Network for containers'
 set container network CONTAINERS prefix '10.5.0.0/24'
 
-# dnsdist
-set container name dnsdist cap-add 'net-bind-service'
-set container name dnsdist image 'docker.io/powerdns/dnsdist-18:1.8.0'
-set container name dnsdist arguments '--log-timestamps'
-set container name dnsdist memory '0'
-set container name dnsdist network CONTAINERS address '10.5.0.2'
-set container name dnsdist restart 'on-failure'
-set container name dnsdist shared-memory '0'
-set container name dnsdist volume config source '/config/containers/dnsdist/config/dnsdist.conf'
-set container name dnsdist volume config destination '/etc/dnsdist/dnsdist.conf'
-set container name dnsdist volume config mode 'ro'
-set container name dnsdist environment TZ value 'Asia/Jakarta'
+# adguardhome
+set container name adguardhome cap-add 'net-bind-service'
+set container name adguardhome image 'docker.io/adguard/adguardhome:v0.107.33'
+set container name adguardhome memory '0'
+set container name adguardhome network CONTAINERS address '10.5.0.2'
+set container name adguardhome restart 'on-failure'
+set container name adguardhome shared-memory '0'
+set container name adguardhome volume config source '/config/containers/adguardhome/config'
+set container name adguardhome volume config destination '/opt/adguardhome/conf'
+set container name adguardhome volume config mode 'rw'
+set container name adguardhome volume work source '/config/containers/adguardhome/work'
+set container name adguardhome volume work destination '/opt/adguardhome/work'
+set container name adguardhome volume work mode 'rw'
 
 # bind
 set container name bind cap-add 'net-bind-service'
@@ -31,20 +32,6 @@ set container name bind volume config mode 'ro'
 set container name bind volume cache source '/tmp/bind/cache'
 set container name bind volume cache destination '/var/cache/bind'
 set container name bind volume cache mode 'rw'
-
-# adguardhome
-set container name adguardhome cap-add 'net-bind-service'
-set container name adguardhome image 'docker.io/adguard/adguardhome:v0.107.33'
-set container name adguardhome memory '0'
-set container name adguardhome network CONTAINERS address '10.5.0.4'
-set container name adguardhome restart 'on-failure'
-set container name adguardhome shared-memory '0'
-set container name adguardhome volume config source '/config/containers/adguardhome/config'
-set container name adguardhome volume config destination '/opt/adguardhome/conf'
-set container name adguardhome volume config mode 'rw'
-set container name adguardhome volume work source '/config/containers/adguardhome/work'
-set container name adguardhome volume work destination '/opt/adguardhome/work'
-set container name adguardhome volume work mode 'rw'
 
 # node-exporter
 set container name node-exporter allow-host-networks
