@@ -24,5 +24,6 @@ set firewall group address-group omada_controller address '10.5.0.10'
 
 # Port groups
 set firewall group port-group omada_tcp port '29811-29814'
-set firewall group port-group omada_tcp port '443,8043'
+set firewall group port-group omada_tcp port '443'
+set firewall group port-group omada_tcp port '8043'
 set firewall group port-group omada_udp port '29810'
