@@ -10,6 +10,3 @@ set qos policy shaper UPLOAD default bandwidth 100%
 set qos policy shaper UPLOAD default queue-type fq-codel
 
 set qos interface eth0 egress UPLOAD
-set qos interface ifb0 egress DOWNLOAD
-set interfaces ethernet eth0 redirect ifb0
-set interfaces input ifb0
