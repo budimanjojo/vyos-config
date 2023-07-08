@@ -19,7 +19,7 @@ set firewall group address-group k8s_services address '192.168.15.0-192.168.15.2
 set firewall group address-group k8s_services address '192.168.200.200-192.168.200.210'
 set firewall group address-group k8s_services address '192.168.10.200-192.168.10.210'
 
-set firewall group address-group k8s_nodes address '192.168.200.21-192.168.200.23'
+set firewall group address-group k8s_nodes address '192.168.200.20-192.168.200.23'
 
 set firewall group address-group nas address '192.168.200.31'
 
