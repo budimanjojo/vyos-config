@@ -5,7 +5,7 @@
 $TTL 3600
 $ORIGIN 168.192.in-addr.arpa.
 @ 3600 IN SOA 168.192.in-addr.arpa. gateway.home.arpa. (
-  1687425003         ; serial number (epoch timestamp)
+  1688802645         ; serial number (epoch timestamp)
   7200               ; refresh period
   3600               ; retry period
   1209600            ; expire time
@@ -20,8 +20,14 @@ $ORIGIN in-addr.arpa.
 
 ; LAN
 1.10.168.192                IN  PTR gateway.home.arpa.
-10.10.168.192               IN  PTR firehd-8-livingroom.home.arpa.
-56.10.168.192               IN  PTR eunice-tablet.home.arpa.
+
+; HOME
+10.50.168.192               IN  PTR jojo-oneplus.home.arpa.
+11.50.168.192               IN  PTR lina-samsung.home.arpa.
+12.50.168.192               IN  PTR eunice-tablet.home.arpa.
+13.50.168.192               IN  PTR eugene-oneplus.home.arpa.
+40.50.168.192               IN  PTR firehd-8-livingroom.home.arpa.
+49.50.168.192               IN  PTR budimanjojo-main.home.arpa.
 
 ; SERVER
 21.200.168.192              IN  PTR kmaster1.home.arpa.
@@ -29,7 +35,6 @@ $ORIGIN in-addr.arpa.
 23.200.168.192              IN  PTR kmaster1.home.arpa.
 30.200.168.192              IN  PTR budimanjojo-vm.home.arpa.
 31.200.168.192              IN  PTR budimanjojo-nas.home.arpa.
-49.200.168.192              IN  PTR budimanjojo-main.home.arpa.
 
 ; IOT
 10.69.168.192               IN  PTR broadlink-livingroom-plug.home.arpa.

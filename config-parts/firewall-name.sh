@@ -14,14 +14,32 @@ set firewall name LAN1-LOCAL rule 20 description 'allow access to ntp server'
 set firewall name LAN1-LOCAL rule 20 action 'accept'
 set firewall name LAN1-LOCAL rule 20 protocol 'udp'
 set firewall name LAN1-LOCAL rule 20 destination port '123'
-set firewall name LAN1-LOCAL rule 30 description 'allow access to ssh server'
-set firewall name LAN1-LOCAL rule 30 action 'accept'
-set firewall name LAN1-LOCAL rule 30 protocol 'tcp'
-set firewall name LAN1-LOCAL rule 30 destination port '22'
 set firewall name LAN1-LOCAL rule 999 description 'drop invalid'
 set firewall name LAN1-LOCAL rule 999 action 'drop'
 set firewall name LAN1-LOCAL rule 999 state invalid 'enable'
 set firewall name LAN1-LOCAL rule 999 log 'enable'
+
+# From HOME to LOCAL
+set firewall name HOME-LOCAL description 'From HOME to LOCAL'
+set firewall name HOME-LOCAL default-action 'drop'
+set firewall name HOME-LOCAL enable-default-log
+set firewall name HOME-LOCAL rule 10 description 'allow access to dhcp server'
+set firewall name HOME-LOCAL rule 10 action 'accept'
+set firewall name HOME-LOCAL rule 10 protocol 'udp'
+set firewall name HOME-LOCAL rule 10 source port '67,68'
+set firewall name HOME-LOCAL rule 10 destination port '67,68'
+set firewall name HOME-LOCAL rule 20 description 'allow access to ntp server'
+set firewall name HOME-LOCAL rule 20 action 'accept'
+set firewall name HOME-LOCAL rule 20 protocol 'udp'
+set firewall name HOME-LOCAL rule 20 destination port '123'
+set firewall name HOME-LOCAL rule 30 description 'allow access to ssh server'
+set firewall name HOME-LOCAL rule 30 action 'accept'
+set firewall name HOME-LOCAL rule 30 protocol 'tcp'
+set firewall name HOME-LOCAL rule 30 destination port '22'
+set firewall name HOME-LOCAL rule 999 description 'drop invalid'
+set firewall name HOME-LOCAL rule 999 action 'drop'
+set firewall name HOME-LOCAL rule 999 state invalid 'enable'
+set firewall name HOME-LOCAL rule 999 log 'enable'
 
 # From IOT to LOCAL
 set firewall name IOT-LOCAL description 'From IOT to LOCAL'
@@ -54,10 +72,6 @@ set firewall name SERVER-LOCAL rule 20 description 'allow access to ntp server'
 set firewall name SERVER-LOCAL rule 20 action 'accept'
 set firewall name SERVER-LOCAL rule 20 protocol 'udp'
 set firewall name SERVER-LOCAL rule 20 destination port '123'
-set firewall name SERVER-LOCAL rule 30 description 'allow access to ssh server'
-set firewall name SERVER-LOCAL rule 30 action 'accept'
-set firewall name SERVER-LOCAL rule 30 protocol 'tcp'
-set firewall name SERVER-LOCAL rule 30 destination port '22'
 set firewall name SERVER-LOCAL rule 40 description 'allow access to bgp server'
 set firewall name SERVER-LOCAL rule 40 action 'accept'
 set firewall name SERVER-LOCAL rule 40 protocol 'tcp'
@@ -155,6 +169,18 @@ set firewall name LOCAL-LAN1 rule 999 action 'drop'
 set firewall name LOCAL-LAN1 rule 999 state invalid 'enable'
 set firewall name LOCAL-LAN1 rule 999 log 'enable'
 
+# From HOME to LAN1
+set firewall name HOME-LAN1 description 'From HOME to LAN1'
+set firewall name HOME-LAN1 default-action 'drop'
+set firewall name HOME-LAN1 enable-default-log
+set firewall name HOME-LAN1 rule 10 description 'accept from trusted devices'
+set firewall name HOME-LAN1 rule 10 action 'accept'
+set firewall name HOME-LAN1 rule 10 source group address-group 'trusted_devices'
+set firewall name HOME-LAN1 rule 999 description 'drop invalid'
+set firewall name HOME-LAN1 rule 999 action 'drop'
+set firewall name HOME-LAN1 rule 999 state invalid 'enable'
+set firewall name HOME-LAN1 rule 999 log 'enable'
+
 # From IOT to LAN1
 set firewall name IOT-LAN1 description 'From IOT to LAN1'
 set firewall name IOT-LAN1 default-action 'drop'
@@ -209,6 +235,78 @@ set firewall name WAN-LAN1 rule 999 action 'drop'
 set firewall name WAN-LAN1 rule 999 state invalid 'enable'
 set firewall name WAN-LAN1 rule 999 log 'enable'
 
+# From LOCAL to HOME
+set firewall name LOCAL-HOME description 'From LOCAL to HOME'
+set firewall name LOCAL-HOME default-action 'drop'
+set firewall name LOCAL-HOME enable-default-log
+set firewall name LOCAL-HOME rule 999 description 'drop invalid'
+set firewall name LOCAL-HOME rule 999 action 'drop'
+set firewall name LOCAL-HOME rule 999 state invalid 'enable'
+set firewall name LOCAL-HOME rule 999 log 'enable'
+
+# From LAN1 to HOME
+set firewall name LAN1-HOME description 'From LAN1 to HOME'
+set firewall name LAN1-HOME default-action 'drop'
+set firewall name LAN1-HOME enable-default-log
+set firewall name LAN1-HOME rule 999 description 'drop invalid'
+set firewall name LAN1-HOME rule 999 action 'drop'
+set firewall name LAN1-HOME rule 999 state invalid 'enable'
+set firewall name LAN1-HOME rule 999 log 'enable'
+
+# From IOT to LAN1
+set firewall name IOT-HOME description 'From IOT to HOME'
+set firewall name IOT-HOME default-action 'drop'
+set firewall name IOT-HOME enable-default-log
+set firewall name IOT-HOME rule 999 description 'drop invalid'
+set firewall name IOT-HOME rule 999 action 'drop'
+set firewall name IOT-HOME rule 999 state invalid 'enable'
+set firewall name IOT-HOME rule 999 log 'enable'
+
+# From SERVER to HOME
+set firewall name SERVER-HOME description 'From SERVER to HOME'
+set firewall name SERVER-HOME default-action 'drop'
+set firewall name SERVER-HOME enable-default-log
+set firewall name SERVER-HOME rule 999 description 'drop invalid'
+set firewall name SERVER-HOME rule 999 action 'drop'
+set firewall name SERVER-HOME rule 999 state invalid 'enable'
+set firewall name SERVER-HOME rule 999 log 'enable'
+
+# From GUEST to HOME
+set firewall name GUEST-HOME description 'From GUEST to HOME'
+set firewall name GUEST-HOME default-action 'drop'
+set firewall name GUEST-HOME enable-default-log
+set firewall name GUEST-HOME rule 999 description 'drop invalid'
+set firewall name GUEST-HOME rule 999 action 'drop'
+set firewall name GUEST-HOME rule 999 state invalid 'enable'
+set firewall name GUEST-HOME rule 999 log 'enable'
+
+# From CONTAINERS to HOME
+set firewall name CONTAINERS-HOME description 'From CONTAINERS to HOME'
+set firewall name CONTAINERS-HOME default-action 'drop'
+set firewall name CONTAINERS-HOME enable-default-log
+set firewall name CONTAINERS-HOME rule 999 description 'drop invalid'
+set firewall name CONTAINERS-HOME rule 999 action 'drop'
+set firewall name CONTAINERS-HOME rule 999 state invalid 'enable'
+set firewall name CONTAINERS-HOME rule 999 log 'enable'
+
+# From WIREGUARD to HOME
+set firewall name WIREGUARD-HOME description 'From WIREGUARD to LAN1'
+set firewall name WIREGUARD-HOME default-action 'accept'
+set firewall name WIREGUARD-HOME enable-default-log
+set firewall name WIREGUARD-HOME rule 999 description 'drop invalid'
+set firewall name WIREGUARD-HOME rule 999 action 'drop'
+set firewall name WIREGUARD-HOME rule 999 state invalid 'enable'
+set firewall name WIREGUARD-HOME rule 999 log 'enable'
+
+# From WAN to HOME
+set firewall name WAN-HOME description 'From WAN to HOME'
+set firewall name WAN-HOME default-action 'drop'
+set firewall name WAN-HOME enable-default-log
+set firewall name WAN-HOME rule 999 description 'drop invalid'
+set firewall name WAN-HOME rule 999 action 'drop'
+set firewall name WAN-HOME rule 999 state invalid 'enable'
+set firewall name WAN-HOME rule 999 log 'enable'
+
 # From LOCAL to IOT
 set firewall name LOCAL-IOT description 'From LOCAL to IOT'
 set firewall name LOCAL-IOT default-action 'drop'
@@ -220,12 +318,21 @@ set firewall name LOCAL-IOT rule 999 log 'enable'
 
 # From LAN1 to IOT
 set firewall name LAN1-IOT description 'From LAN1 to IOT'
-set firewall name LAN1-IOT default-action 'accept'
+set firewall name LAN1-IOT default-action 'drop'
 set firewall name LAN1-IOT enable-default-log
 set firewall name LAN1-IOT rule 999 description 'drop invalid'
 set firewall name LAN1-IOT rule 999 action 'drop'
 set firewall name LAN1-IOT rule 999 state invalid 'enable'
 set firewall name LAN1-IOT rule 999 log 'enable'
+
+# From HOME to IOT
+set firewall name HOME-IOT description 'From LAN1 to IOT'
+set firewall name HOME-IOT default-action 'accept'
+set firewall name HOME-IOT enable-default-log
+set firewall name HOME-IOT rule 999 description 'drop invalid'
+set firewall name HOME-IOT rule 999 action 'drop'
+set firewall name HOME-IOT rule 999 state invalid 'enable'
+set firewall name HOME-IOT rule 999 log 'enable'
 
 # From SERVER to IOT
 set firewall name SERVER-IOT description 'From SERVER to IOT'
@@ -298,6 +405,25 @@ set firewall name LAN1-SERVER rule 999 description 'drop invalid'
 set firewall name LAN1-SERVER rule 999 action 'drop'
 set firewall name LAN1-SERVER rule 999 state invalid 'enable'
 set firewall name LAN1-SERVER rule 999 log 'enable'
+
+# From HOME to SERVER
+set firewall name HOME-SERVER description 'From HOME to SERVER'
+set firewall name HOME-SERVER default-action 'drop'
+set firewall name HOME-SERVER enable-default-log
+set firewall name HOME-SERVER rule 10 description 'allow access k8s ingress'
+set firewall name HOME-SERVER rule 10 action 'accept'
+set firewall name HOME-SERVER rule 10 protocol 'tcp'
+set firewall name HOME-SERVER rule 10 destination group address-group 'k8s_ingress'
+set firewall name HOME-SERVER rule 10 destination port '80,443'
+set firewall name HOME-SERVER rule 20 description 'allow access to ssh from trusted devices'
+set firewall name HOME-SERVER rule 20 action 'accept'
+set firewall name HOME-SERVER rule 20 protocol 'tcp'
+set firewall name HOME-SERVER rule 20 source group address-group 'trusted_devices'
+set firewall name HOME-SERVER rule 20 destination port '22'
+set firewall name HOME-SERVER rule 999 description 'drop invalid'
+set firewall name HOME-SERVER rule 999 action 'drop'
+set firewall name HOME-SERVER rule 999 state invalid 'enable'
+set firewall name HOME-SERVER rule 999 log 'enable'
 
 # From IOT to SERVER
 set firewall name IOT-SERVER description 'From IOT to SERVER'
@@ -372,6 +498,15 @@ set firewall name LAN1-GUEST rule 999 action 'drop'
 set firewall name LAN1-GUEST rule 999 state invalid 'enable'
 set firewall name LAN1-GUEST rule 999 log 'enable'
 
+# From HOME to GUEST
+set firewall name HOME-GUEST description 'From HOME to GUEST'
+set firewall name HOME-GUEST default-action 'drop'
+set firewall name HOME-GUEST enable-default-log
+set firewall name HOME-GUEST rule 999 description 'drop invalid'
+set firewall name HOME-GUEST rule 999 action 'drop'
+set firewall name HOME-GUEST rule 999 state invalid 'enable'
+set firewall name HOME-GUEST rule 999 log 'enable'
+
 # From IOT to GUEST
 set firewall name IOT-GUEST description 'From IOT to GUEST'
 set firewall name IOT-GUEST default-action 'drop'
@@ -444,6 +579,15 @@ set firewall name LAN1-CONTAINERS rule 999 description 'drop invalid'
 set firewall name LAN1-CONTAINERS rule 999 action 'drop'
 set firewall name LAN1-CONTAINERS rule 999 state invalid 'enable'
 set firewall name LAN1-CONTAINERS rule 999 log 'enable'
+
+# From HOME to CONTAINERS
+set firewall name HOME-CONTAINERS description 'From HOME to CONTAINERS'
+set firewall name HOME-CONTAINERS default-action 'accept'
+set firewall name HOME-CONTAINERS enable-default-log
+set firewall name HOME-CONTAINERS rule 999 description 'drop invalid'
+set firewall name HOME-CONTAINERS rule 999 action 'drop'
+set firewall name HOME-CONTAINERS rule 999 state invalid 'enable'
+set firewall name HOME-CONTAINERS rule 999 log 'enable'
 
 # From IOT to CONTAINERS
 set firewall name IOT-CONTAINERS description 'From IOT to CONTAINERS'
@@ -523,6 +667,15 @@ set firewall name LAN1-WIREGUARD rule 999 action 'drop'
 set firewall name LAN1-WIREGUARD rule 999 state invalid 'enable'
 set firewall name LAN1-WIREGUARD rule 999 log 'enable'
 
+# From HOME to WIREGUARD
+set firewall name HOME-WIREGUARD description 'From HOME to WIREGUARD'
+set firewall name HOME-WIREGUARD default-action 'drop'
+set firewall name HOME-WIREGUARD enable-default-log
+set firewall name HOME-WIREGUARD rule 999 description 'drop invalid'
+set firewall name HOME-WIREGUARD rule 999 action 'drop'
+set firewall name HOME-WIREGUARD rule 999 state invalid 'enable'
+set firewall name HOME-WIREGUARD rule 999 log 'enable'
+
 # From IOT to WIREGUARD
 set firewall name IOT-WIREGUARD description 'From IOT to WIREGUARD'
 set firewall name IOT-WIREGUARD default-action 'drop'
@@ -582,6 +735,10 @@ set firewall name LOCAL-WAN default-action 'accept'
 # From LAN1 to WAN
 set firewall name LAN1-WAN description 'From LAN1 to WAN'
 set firewall name LAN1-WAN default-action 'accept'
+
+# From HOME to WAN
+set firewall name HOME-WAN description 'From HOME to WAN'
+set firewall name HOME-WAN default-action 'accept'
 
 # From IOT to WAN
 set firewall name IOT-WAN description 'From IOT to WAN'

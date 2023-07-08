@@ -2,7 +2,7 @@
 # shellcheck disable=all
 
 # SSH server
-set service ssh listen-address '192.168.10.1'
+set service ssh listen-address '192.168.50.1'
 set service ssh listen-address '192.168.200.1'
 set service ssh disable-password-authentication
 
@@ -24,11 +24,29 @@ set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 name-ser
 set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 domain-name 'home.arpa'
 set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 range 0 start '192.168.10.50'
 set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 range 0 stop '192.168.10.199'
-# LAN1 static mappings
-set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 static-mapping firehd-8-livingroom ip-address '192.168.10.10'
-set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 static-mapping firehd-8-livingroom mac-address '40:a9:cf:3b:a3:7d'
-set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 static-mapping eunice-tablet ip-address '192.168.10.56'
-set service dhcp-server shared-network-name LAN1 subnet 192.168.10.0/24 static-mapping eunice-tablet mac-address '4a:a4:dd:8d:e6:90'
+
+# HOME VLAN DHCP server
+set service dhcp-server shared-network-name HOME authoritative
+set service dhcp-server shared-network-name HOME ping-check
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 default-router '192.168.50.1'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 lease '86400'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 name-server '10.5.0.2'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 domain-name 'home.arpa'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 range 0 start '192.168.50.50'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 range 0 stop '192.168.50.199'
+# HOME VLAN static-mapping
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping jojo-oneplus ip-address '192.168.50.10'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping jojo-oneplus mac-address 'ac:d6:18:e5:b5:34'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping lina-samsung ip-address '192.168.50.11'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping lina-samsung mac-address 'ae:9c:e8:65:f4:76'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping eunice-tablet ip-address '192.168.50.12'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping eunice-tablet mac-address '4a:a4:dd:8d:e6:90'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping eugene-oneplus ip-address '192.168.50.13'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping eugene-oneplus mac-address 'aa:69:2c:8c:c1:8a'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping firehd-8-livingroom ip-address '192.168.50.40'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping firehd-8-livingroom mac-address '40:a9:cf:3b:a3:7d'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping budimanjojo-main ip-address '192.168.50.49'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping budimanjojo-main mac-address 'b4:2e:99:62:8d:06'
 
 # SERVER VLAN DHCP server
 set service dhcp-server shared-network-name SERVER authoritative
@@ -44,8 +62,6 @@ set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 stati
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-vm mac-address 'd0:50:99:25:88:91'
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-nas ip-address '192.168.200.31'
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-nas mac-address 'ae:de:bc:cc:7b:2d'
-set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-main ip-address '192.168.200.49'
-set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-main mac-address 'b4:2e:99:62:8d:06'
 
 # IOT VLAN DHCP server
 set service dhcp-server shared-network-name IOT authoritative
