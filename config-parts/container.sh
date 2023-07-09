@@ -52,13 +52,6 @@ set container name node-exporter environment procfs value '/host/proc'
 set container name node-exporter environment rootfs value '/host/rootfs'
 set container name node-exporter environment sysfs value '/host/sys'
 
-# speedtest-exporter
-set container name speedtest-exporter allow-host-networks
-set container name speedtest-exporter image 'ghcr.io/miguelndecarvalho/speedtest-exporter:v3.5.4'
-set container name speedtest-exporter memory '0'
-set container name speedtest-exporter restart 'on-failure'
-set container name speedtest-exporter shared-memory '0'
-
 # omada-controller
 set container name omada-controller image 'docker.io/mbentley/omada-controller:5.9'
 set container name omada-controller memory '0'
