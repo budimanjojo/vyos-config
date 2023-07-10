@@ -272,6 +272,7 @@ set firewall name SERVER-HOME description 'From SERVER to HOME'
 set firewall name SERVER-HOME default-action 'drop'
 set firewall name SERVER-HOME enable-default-log
 set firewall name SERVER-HOME rule 10 description 'allow access to fullykioskbrowser from k8s nodes'
+set firewall name SERVER-HOME rule 10 action 'accept'
 set firewall name SERVER-HOME rule 10 protocol 'tcp'
 set firewall name SERVER-HOME rule 10 source group address-group 'k8s_nodes'
 set firewall name SERVER-HOME rule 10 destination group address-group 'wall_displays'
