@@ -12,6 +12,8 @@ set firewall group address-group trusted_devices address '192.168.50.10'
 set firewall group address-group trusted_devices address '192.168.50.11'
 set firewall group address-group trusted_devices address '192.168.50.49'
 
+set firewall group address-group wall_displays address '192.168.50.40'
+
 set firewall group address-group k8s_api address '192.168.200.20'
 set firewall group address-group k8s_ingress address '192.168.15.0'
 
