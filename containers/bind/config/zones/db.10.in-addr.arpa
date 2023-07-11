@@ -15,6 +15,9 @@ $ORIGIN 10.in-addr.arpa.
 ; NS Records
 @                           IN  NS  gateway.home.arpa.
 
+; Reset origin
+$ORIGIN in-addr.arpa.
+
 ; WIREGUARD
 2.0.10.10                   IN  PTR android-phone-wg.home.arpa.
 3.0.10.10                   IN  PTR work-pc-wg.home.arpa.
