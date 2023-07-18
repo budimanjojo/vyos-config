@@ -3,6 +3,7 @@
 
 set system host-name 'gateway'
 set system domain-name 'home.arpa'
+set system time-zone 'Asia/Jakarta'
 
 set system ipv6 disable-forwarding
 
@@ -19,4 +20,7 @@ set system name-server '8.8.8.8'
 set system task-scheduler task backup-config crontab-spec '0 0 * * *'
 set system task-scheduler task backup-config executable path '/config/scripts/custom-config-backup.sh'
 
-set system time-zone 'Asia/Jakarta'
+set system syslog host 192.168.15.5 facility kern level 'warning'
+set system syslog host 192.168.15.5 protocol 'tcp'
+set system syslog host 192.168.15.5 port '6000'
+set system syslog host 192.168.15.5 format 'octed-counted'
