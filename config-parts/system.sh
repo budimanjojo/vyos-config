@@ -23,4 +23,4 @@ set system task-scheduler task backup-config executable path '/config/scripts/cu
 set system syslog host 192.168.15.5 facility kern level 'warning'
 set system syslog host 192.168.15.5 protocol 'tcp'
 set system syslog host 192.168.15.5 port '6000'
-set system syslog host 192.168.15.5 format 'octed-counted'
+set system syslog host 192.168.15.5 format 'octet-counted'
