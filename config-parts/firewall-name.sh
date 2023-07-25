@@ -442,6 +442,7 @@ set firewall name HOME-SERVER rule 30 source group address-group 'trusted_device
 set firewall name HOME-SERVER rule 30 destination group address-group 'k8s_nodes'
 set firewall name HOME-SERVER rule 40 description 'allow access to talos api port from trusted devices'
 set firewall name HOME-SERVER rule 40 action 'accept'
+set firewall name HOME-SERVER rule 40 protocol 'tcp'
 set firewall name HOME-SERVER rule 40 source group address-group 'trusted_devices'
 set firewall name HOME-SERVER rule 40 destination port '50000'
 set firewall name HOME-SERVER rule 999 description 'drop invalid'
