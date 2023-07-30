@@ -42,7 +42,7 @@ set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-m
 set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping eunice-tablet ip-address '192.168.50.12'
 set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping eunice-tablet mac-address '00:03:f7:bd:70:d0'
 set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping eugene-oneplus ip-address '192.168.50.13'
-set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping eugene-oneplus mac-address 'aa:69:2c:8c:c1:8a'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping eugene-oneplus mac-address '98:09:cf:0c:70:af'
 set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping firehd-8-livingroom ip-address '192.168.50.40'
 set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping firehd-8-livingroom mac-address '40:a9:cf:3b:a3:7d'
 set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping budimanjojo-main ip-address '192.168.50.49'
