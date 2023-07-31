@@ -5,7 +5,7 @@
 $TTL 3600
 $ORIGIN 10.in-addr.arpa.
 @ 3600 IN SOA 10.in-addr.arpa. gateway.home.arpa. (
-  1688802645         ; serial number (epoch timestamp)
+  1690769841         ; serial number (epoch timestamp)
   7200               ; refresh period
   3600               ; retry period
   1209600            ; expire time
@@ -19,5 +19,6 @@ $ORIGIN 10.in-addr.arpa.
 $ORIGIN in-addr.arpa.
 
 ; WIREGUARD
-2.0.10.10                   IN  PTR android-phone-wg.home.arpa.
+2.0.10.10                   IN  PTR oneplus9-phone-wg.home.arpa.
 3.0.10.10                   IN  PTR work-pc-wg.home.arpa.
+4.0.10.10                   IN  PTR oneplus6t-wg.home.arpa.
