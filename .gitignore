@@ -48,6 +48,7 @@
 !/containers/bind/config/
 /containers/bind/config/*
 !/containers/bind/config/named.conf
+!/containers/bind/config/rndc.key.tmpl
 !/containers/bind/config/zones/
 /containers/bind/config/zones/*
 !/containers/bind/config/zones/db.*
