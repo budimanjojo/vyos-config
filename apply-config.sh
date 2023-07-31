@@ -53,7 +53,7 @@ do
     if ! "$dry_run"; then
       envsubst <"$file" >"$cfgfile"
       echo "$newsha" >"$shafile"
-      restart_containers="$restart_containers $(echo "$file" | awk -F / '{print $1}')"
+      restart_containers="$restart_containers $(echo "$file" | awk -F / '{print $2}')"
     fi
   fi
 done < <(find containers -type f -name "*.tmpl" ! -name "*.bootstrap.tmpl" -print0)
