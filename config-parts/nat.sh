@@ -1,13 +1,6 @@
 #!/bin/vbash
 # shellcheck disable=all
 
-# Port forward
-set nat destination rule 101 description 'Port forward 80,443 to k8s Ingress'
-set nat destination rule 101 destination port '80,443'
-set nat destination rule 101 protocol 'tcp'
-set nat destination rule 101 inbound-interface 'eth0'
-set nat destination rule 101 translation address '192.168.15.0'
-
 # Force DNS
 set nat destination rule 102 description 'Force DNS for IOT VLAN'
 set nat destination rule 102 destination address '!10.5.0.2'
