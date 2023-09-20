@@ -53,7 +53,7 @@ set container name node-exporter environment rootfs value '/host/rootfs'
 set container name node-exporter environment sysfs value '/host/sys'
 
 # omada-controller
-set container name omada-controller image 'docker.io/mbentley/omada-controller:5.9'
+set container name omada-controller image 'docker.io/mbentley/omada-controller:5.12'
 set container name omada-controller memory '0'
 set container name omada-controller network CONTAINERS address '10.5.0.10'
 set container name omada-controller restart 'on-failure'
