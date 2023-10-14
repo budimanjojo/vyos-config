@@ -47,11 +47,13 @@
 /containers/bind/*
 !/containers/bind/config/
 /containers/bind/config/*
-!/containers/bind/config/named.conf
+!/containers/bind/config/named.conf.tmpl
 !/containers/bind/config/rndc.key.tmpl
+!/containers/bind/config/externaldns.key.tmpl
 !/containers/bind/config/zones/
 /containers/bind/config/zones/*
-!/containers/bind/config/zones/db.*
+!/containers/bind/config/zones/db.*.arpa
+!/containers/bind/config/zones/db.{{*}}
 
 !/containers/dnsdist/
 /containers/dnsdist/*

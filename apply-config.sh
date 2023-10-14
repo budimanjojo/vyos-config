@@ -58,6 +58,30 @@ do
   fi
 done < <(find containers -type f -name "*.tmpl" ! -name "*.bootstrap.tmpl" -print0)
 
+while IFS= read -r -d '' file
+do
+  if [[ "$file" =~ (.*)\{\{([A-Za-z_0-9\-]*)\}\}(.*) ]]; then
+    fname="${BASH_REMATCH[1]}""${!BASH_REMATCH[2]}""${BASH_REMATCH[3]}"
+
+    shafile=$fname.sha256
+    if ! test -e "$shafile"; then
+      echo "rebuild" >"$shafile"
+    fi
+
+    newsha=$(envsubst <"$file" | shasum -a 256 | awk '{print $1}')
+    oldsha=$(cat "$shafile")
+
+    if ! test "$newsha" == "$oldsha"; then
+      echo "Configuration changed for $fname"
+      if ! "$dry_run"; then
+        envsubst <"$file" >"$fname"
+        echo "$newsha" >"$shafile"
+        restart_containers="$restart_containers $(echo "$file" | awk -F / '{print $2}')"
+      fi
+    fi
+  fi
+done < <(find containers -type f -print0)
+
 # Include VyOS specific functions and aliases
 # shellcheck source=/dev/null
 source /opt/vyatta/etc/functions/script-template
@@ -107,6 +131,9 @@ else
       run delete container image "${image_id}"
     fi
   done
+
+  # Remove duplicates containers to restart
+  restart_containers=$(echo "$restart_containers" | tr ' ' '\n' | sort -u | tr '\n' ' ')
 
   # Restart containers
   for container in $restart_containers; do

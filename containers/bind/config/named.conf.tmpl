@@ -38,9 +38,46 @@ logging {
 };
 
 include "/etc/bind/rndc.key";
+include "/etc/bind/externaldns.key";
 
 controls {
   inet 127.0.0.1 allow { localhost; } keys { "rndc-key"; };
+};
+
+zone "${SECRET_DOMAIN_0}." {
+  type master;
+  file "/etc/bind/zones/db.${SECRET_DOMAIN_0}";
+  journal "/var/cache/bind/db.${SECRET_DOMAIN_0}.jnl";
+  allow-transfer {
+    key "externaldns";
+  };
+  update-policy {
+    grant externaldns zonesub ANY;
+  };
+};
+
+zone "${SECRET_DOMAIN_1}." {
+  type master;
+  file "/etc/bind/zones/db.${SECRET_DOMAIN_1}";
+  journal "/var/cache/bind/db.${SECRET_DOMAIN_1}.jnl";
+  allow-transfer {
+    key "externaldns";
+  };
+  update-policy {
+    grant externaldns zonesub ANY;
+  };
+};
+
+zone "${SECRET_DOMAIN_2}." {
+  type master;
+  file "/etc/bind/zones/db.${SECRET_DOMAIN_2}";
+  journal "/var/cache/bind/db.${SECRET_DOMAIN_2}.jnl";
+  allow-transfer {
+    key "externaldns";
+  };
+  update-policy {
+    grant externaldns zonesub ANY;
+  };
 };
 
 zone "home.arpa." {
