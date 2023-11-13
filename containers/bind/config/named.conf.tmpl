@@ -68,18 +68,6 @@ zone "${SECRET_DOMAIN_1}." {
   };
 };
 
-zone "${SECRET_DOMAIN_2}." {
-  type master;
-  file "/etc/bind/zones/db.${SECRET_DOMAIN_2}";
-  journal "/var/cache/bind/db.${SECRET_DOMAIN_2}.jnl";
-  allow-transfer {
-    key "externaldns";
-  };
-  update-policy {
-    grant externaldns zonesub ANY;
-  };
-};
-
 zone "home.arpa." {
   type master;
   file "/etc/bind/zones/db.home.arpa";
