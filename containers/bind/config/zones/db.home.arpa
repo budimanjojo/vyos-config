@@ -36,6 +36,7 @@ budimanjojo-nas             IN  A   192.168.200.31
 ; IOT
 broadlink-livingroom-plug   IN  A   192.168.69.10
 broadlink-bedroom-rm4c      IN  A   192.168.69.11
+ezviz-bedroom-camera        IN  A   192.168.69.21
 
 ; WIREGUARD
 oneplus9-phone-wg           IN  A   10.10.0.2

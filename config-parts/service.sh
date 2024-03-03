@@ -77,6 +77,8 @@ set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 static-ma
 set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 static-mapping broadlink-livingroom-plug mac-address '34:ea:34:79:f0:91'
 set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 static-mapping broadlink-bedroom-rm4c ip-address '192.168.69.11'
 set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 static-mapping broadlink-bedroom-rm4c mac-address '24:df:a7:4f:9a:8e'
+set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 static-mapping ezviz-bedroom-camera ip-address '192.168.69.21'
+set service dhcp-server shared-network-name IOT subnet 192.168.69.0/24 static-mapping ezviz-bedroom-camera mac-address 'a0:ff:0c:9f:A7:7a'
 
 # GUEST VLAN DHCP server
 set service dhcp-server shared-network-name GUEST authoritative

@@ -39,3 +39,4 @@ $ORIGIN in-addr.arpa.
 ; IOT
 10.69.168.192               IN  PTR broadlink-livingroom-plug.home.arpa.
 11.69.168.192               IN  PTR broadlink-bedroom-rm4c.home.arpa.
+21.69.168.192               IN  PTR ezviz-bedroom-camera.home.arpa.
