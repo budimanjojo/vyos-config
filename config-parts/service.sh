@@ -45,6 +45,8 @@ set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-m
 set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping eugene-oneplus mac-address '98:09:cf:0c:70:af'
 set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping firehd-8-livingroom ip-address '192.168.50.40'
 set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping firehd-8-livingroom mac-address '40:a9:cf:3b:a3:7d'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping raspberry-pi4-tv ip-address '192.168.50.41'
+set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping raspberry-pi4-tv mac-address 'dc:a6:32:10:60:45'
 set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping budimanjojo-main ip-address '192.168.50.49'
 set service dhcp-server shared-network-name HOME subnet 192.168.50.0/24 static-mapping budimanjojo-main mac-address 'b4:2e:99:62:8d:06'
 

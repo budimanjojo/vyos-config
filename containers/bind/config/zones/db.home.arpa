@@ -24,6 +24,7 @@ lina-samsung                IN  A   192.168.50.11
 eunice-tablet               IN  A   192.168.50.12
 eugene-oneplus              IN  A   192.168.50.13
 firehd-8-livingroom         IN  A   192.168.50.40
+raspberry-pi4-tv            IN  A   192.168.50.41
 budimanjojo-main            IN  A   192.168.50.49
 
 ; SERVER

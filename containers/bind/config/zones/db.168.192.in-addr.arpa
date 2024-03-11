@@ -27,6 +27,7 @@ $ORIGIN in-addr.arpa.
 12.50.168.192               IN  PTR eunice-tablet.home.arpa.
 13.50.168.192               IN  PTR eugene-oneplus.home.arpa.
 40.50.168.192               IN  PTR firehd-8-livingroom.home.arpa.
+41.50.168.192               IN  PTR raspberry-pi4-tv.home.arpa.
 49.50.168.192               IN  PTR budimanjojo-main.home.arpa.
 
 ; SERVER
