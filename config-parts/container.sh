@@ -35,7 +35,7 @@ set container name bind volume cache mode 'rw'
 
 # node-exporter
 set container name node-exporter allow-host-networks
-set container name node-exporter image 'quay.io/prometheus/node-exporter:v1.8.0'
+set container name node-exporter image 'quay.io/prometheus/node-exporter:v1.8.1'
 set container name node-exporter memory '0'
 set container name node-exporter restart 'on-failure'
 set container name node-exporter shared-memory '0'
