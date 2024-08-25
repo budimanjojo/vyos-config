@@ -31,8 +31,7 @@ budimanjojo-main            IN  A   192.168.50.49
 kmaster1                    IN  A   192.168.200.21
 kmaster2                    IN  A   192.168.200.22
 kmaster3                    IN  A   192.168.200.23
-budimanjojo-vm              IN  A   192.168.200.30
-budimanjojo-nas             IN  A   192.168.200.31
+budimanjojo-nas             IN  A   192.168.200.30
 
 ; IOT
 broadlink-livingroom-plug   IN  A   192.168.69.10

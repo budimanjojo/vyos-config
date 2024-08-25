@@ -25,8 +25,6 @@ set firewall group address-group k8s_services address '192.168.10.200-192.168.10
 
 set firewall group address-group k8s_nodes address '192.168.200.20-192.168.200.23'
 
-set firewall group address-group nas address '192.168.200.31'
-
 set firewall group address-group dns_server address '10.5.0.2'
 set firewall group address-group omada_controller address '10.5.0.10'
 

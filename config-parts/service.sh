@@ -60,10 +60,8 @@ set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 domai
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 range 0 start '192.168.200.50'
 set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 range 0 stop '192.168.200.199'
 # SERVER VLAN static mappings
-set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-vm ip-address '192.168.200.30'
-set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-vm mac-address 'd0:50:99:25:88:91'
-set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-nas ip-address '192.168.200.31'
-set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-nas mac-address 'ae:de:bc:cc:7b:2d'
+set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-nas ip-address '192.168.200.30'
+set service dhcp-server shared-network-name SERVER subnet 192.168.200.0/24 static-mapping budimanjojo-nas mac-address 'd0:50:99:25:88:91'
 
 # IOT VLAN DHCP server
 set service dhcp-server shared-network-name IOT authoritative

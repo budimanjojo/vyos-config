@@ -32,10 +32,9 @@ $ORIGIN in-addr.arpa.
 
 ; SERVER
 21.200.168.192              IN  PTR kmaster1.home.arpa.
-22.200.168.192              IN  PTR kmaster1.home.arpa.
-23.200.168.192              IN  PTR kmaster1.home.arpa.
-30.200.168.192              IN  PTR budimanjojo-vm.home.arpa.
-31.200.168.192              IN  PTR budimanjojo-nas.home.arpa.
+22.200.168.192              IN  PTR kmaster2.home.arpa.
+23.200.168.192              IN  PTR kmaster3.home.arpa.
+30.200.168.192              IN  PTR budimanjojo-nas.home.arpa.
 
 ; IOT
 10.69.168.192               IN  PTR broadlink-livingroom-plug.home.arpa.
