@@ -21,7 +21,6 @@ set container name adguardhome volume work mode 'rw'
 # bind
 set container name bind cap-add 'net-bind-service'
 set container name bind image 'docker.io/internetsystemsconsortium/bind9:9.21'
-set container name bind command '/usr/sbin/named -4 -f -c /etc/bind/named.conf -u bind'
 set container name bind memory '0'
 set container name bind network CONTAINERS address '10.5.0.3'
 set container name bind restart 'on-failure'
