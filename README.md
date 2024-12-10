@@ -1,3 +1,9 @@
+## Archived
+
+> :warning: I migrated away from VyOS for NixOS managed firewall now because of the hostility of VyOS towards people building LTS for personal use.
+>
+> You can browse my NixOS firewall in my [nix-config repository](https://github.com/budimanjojo/nix-config) in the `budimanjojo-firewall` nixosConfigurations output.
+
 <div align="center">
 
 <img src="https://vyos.io/wp-content/themes/vyos_theme/images/main/vyos-logo.svg" align="center" width="144px" height="144px"/>
